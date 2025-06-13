@@ -1,0 +1,10 @@
+---
+import hljs from "highlight.js";
+
+const { node } = Astro.props;
+const { code, language } = node;
+
+const codeData = hljs.highlight(code, { language });
+---
+
+<pre><code set:html={codeData.value} /></pre>

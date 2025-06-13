@@ -1,0 +1,52 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-white rounded-lg shadow dark:bg-gray-900 mt-auto">
+  <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+    <div class="sm:flex sm:items-center sm:justify-between">
+      <a
+        href="/"
+        class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
+      >
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 64 64"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="32" cy="32" r="32" fill="white"></circle>
+          <path
+            d="M32 0C14.3275 0 0 14.3275 0 32C0 49.6725 14.3275 64 32 64C49.6725 64 64 49.6725 64 32C64 14.3275 49.6725 0 32 0ZM44.0267 47.4752H22.1067V16.5248H28.5739V41.9104H44.0277L44.0267 47.4752Z"
+            class="fill-primary-600 dark:fill-primary-500"></path>
+        </svg>
+        <span
+        class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+        >Lucas</span
+      >
+      </a>
+      <ul
+        class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400"
+      >
+        <li>
+          <a
+            href="https://github.com/lucassodresa"
+            class="hover:underline me-4 md:me-6">Github</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/lucassodresa"
+            class="hover:underline me-4 md:me-6">Linkedin</a
+          >
+        </li>
+      </ul>
+    </div>
+    <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+    <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400"
+      >© {year}
+      <a href="/" class="hover:underline">Lucas</a>. All Rights Reserved.</span
+    >
+  </div>
+</footer>
