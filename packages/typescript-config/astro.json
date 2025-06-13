@@ -1,0 +1,28 @@
+{
+    "extends": "astro/tsconfigs/strict",
+    "compilerOptions": {
+      "target": "ES2022",
+      "lib": ["DOM", "DOM.Iterable", "es2022"],
+      "allowJs": true,
+      "skipLibCheck": true,
+      "strict": true,
+      "forceConsistentCasingInFileNames": true,
+      "noEmit": true,
+      "module": "NodeNext",
+      "moduleResolution": "NodeNext",
+      "resolveJsonModule": true,
+      "jsx": "react-jsx",
+      "jsxImportSource": "react",
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["./src/*"]
+      },
+      "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "incremental": false,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noUncheckedIndexedAccess": true
+    }
+  }
