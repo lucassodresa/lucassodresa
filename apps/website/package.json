@@ -6,6 +6,7 @@
   "scripts": {
     "lint": "eslint . --max-warnings=0",
     "check-types": "astro check",
+    "format": "prettier --write \"apps/websites/**/*.{js,mjs,ts,tsx,md,astro}\"",
     "dev": "astro dev",
     "build": "astro build",
     "start": "astro dev",
