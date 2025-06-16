@@ -3,7 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
+  "scripts": {
+    "format": "prettier --write \"**/*.{json}\""
+  },
   "publishConfig": {
     "access": "public"
+  },
+  "devDependencies": {
+    "astro": "^5.9.3"
   }
 }
