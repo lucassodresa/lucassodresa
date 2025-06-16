@@ -6,6 +6,7 @@
   "scripts": {
     "lint": "eslint . --max-warnings=0",
     "check-types": "astro check",
+    "format": "prettier --write \"**/*.{js,json,mjs,ts,tsx,md}\"",
     "dev": "sanity dev",
     "build": "sanity build",
     "start": "sanity start",

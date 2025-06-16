@@ -4,7 +4,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "format": "prettier --write \"**/*.{json}\""
+    "format": "prettier --write \"**/*.{js,json,mjs,ts,tsx,md}\""
   },
   "publishConfig": {
     "access": "public"
