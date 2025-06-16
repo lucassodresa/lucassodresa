@@ -1,39 +1,10 @@
 ---
-import { sanityClient } from "sanity:client";
 import BaseLayout from "@/layouts/Base.astro";
-import { imageUrlBuilder } from "@/lib/sanity";
+import { imageUrlBuilder } from "@/libs/sanity";
+import { loadAllPosts } from "@/core/usecases/load-all-posts";
 
-type IPost = {
-  title: string;
-  slug: string;
-  description: string;
-  mainImageUrl: string;
-  author: {
-    name: string;
-    imageUrl: string;
-  };
-  _updatedAt: string;
-  _createdAt: string;
-  estimatedReadingTime: number;
-};
+const posts = await loadAllPosts()
 
-const posts: IPost[] = await sanityClient.fetch(
-  `*[_type == "post" && defined(slug)] | order(publishedAt desc)
-  {
-    _id, 
-    title, 
-    "slug": slug.current,
-    description,
-    "mainImageUrl": mainImage.asset->url,
-    author->{
-      name,
-      "imageUrl": image.asset->url
-    },
-    "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180 ),
-    _updatedAt,
-    _createdAt
-  }`
-);
 ---
 
 <BaseLayout title="Posts" description="Posts page">

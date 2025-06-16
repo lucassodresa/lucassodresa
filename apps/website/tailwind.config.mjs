@@ -23,5 +23,5 @@ export default {
       },
     },
   },
-  plugins: [require("flowbite/plugin"), require('flowbite-typography')],
+  plugins: [import("flowbite/plugin"), import('flowbite-typography')],
 };
