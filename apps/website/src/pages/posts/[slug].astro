@@ -1,11 +1,11 @@
 ---
-import { PortableText } from "astro-portabletext";
-import BaseLayout from "@/layouts/base.astro";
-import Image from "@/components/portabletext/image.astro";
-import ImageAstro from "@/components/image.astro";
-import Code from "@/components/portabletext/code.astro";
-import { imageUrlBuilder } from "@/libs/sanity";
-import { loadAllPosts } from "@/core/usecases/load-all-posts";
+import { PortableText } from 'astro-portabletext';
+import BaseLayout from '@/layouts/base.astro';
+import Image from '@/components/portabletext/image.astro';
+import ImageAstro from '@/components/image.astro';
+import Code from '@/components/portabletext/code.astro';
+import { imageUrlBuilder } from '@/libs/sanity';
+import { loadAllPosts } from '@/core/usecases/load-all-posts';
 
 const components = {
   type: {
@@ -14,22 +14,28 @@ const components = {
   },
 };
 
-
 export const getStaticPaths = async () => {
-  const posts = await loadAllPosts()
+  const posts = await loadAllPosts();
 
   return posts.map(
     ({ slug, title, description, author, _createdAt, body, mainImageUrl }) => {
       const date = new Date(_createdAt);
-      const dateString = new Intl.DateTimeFormat("en-US", {
-        dateStyle: "medium",
+      const dateString = new Intl.DateTimeFormat('en-US', {
+        dateStyle: 'medium',
       }).format(date);
 
       return {
         params: { slug },
-        props: { title, description, body, mainImageUrl, author, dateString },
+        props: {
+          title,
+          description,
+          body,
+          mainImageUrl,
+          author,
+          dateString,
+        },
       };
-    }
+    },
   );
 };
 
@@ -108,7 +114,7 @@ const { title, description, body, author, dateString, mainImageUrl } =
                 src={imageUrlBuilder(author.imageUrl)
                   .height(64)
                   .width(64)
-                  .format("webp")
+                  .format('webp')
                   .url()}
                 alt={author.name}
                 loading="lazy"

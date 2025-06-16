@@ -1,9 +1,9 @@
 ---
 const pages = [
-  { name: "Home", href: "/" },
-  { name: "Projects", href: "/projects" },
-  { name: "Posts", href: "/posts" },
-  { name: "About", href: "/about" },
+  { name: 'Home', href: '/' },
+  { name: 'Projects', href: '/projects' },
+  { name: 'Posts', href: '/posts' },
+  { name: 'About', href: '/about' },
 ];
 const { pathname } = Astro.url;
 ---
@@ -14,17 +14,17 @@ const { pathname } = Astro.url;
   >
     <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
       <svg
-      width="32"
-      height="32"
-      viewBox="0 0 64 64"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <circle cx="32" cy="32" r="32" fill="white"></circle>
-      <path
-        d="M32 0C14.3275 0 0 14.3275 0 32C0 49.6725 14.3275 64 32 64C49.6725 64 64 49.6725 64 32C64 14.3275 49.6725 0 32 0ZM44.0267 47.4752H22.1067V16.5248H28.5739V41.9104H44.0277L44.0267 47.4752Z"
-        class="fill-primary-600 dark:fill-primary-500"></path>
-    </svg>
+        width="32"
+        height="32"
+        viewBox="0 0 64 64"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="32" cy="32" r="32" fill="white"></circle>
+        <path
+          d="M32 0C14.3275 0 0 14.3275 0 32C0 49.6725 14.3275 64 32 64C49.6725 64 64 49.6725 64 32C64 14.3275 49.6725 0 32 0ZM44.0267 47.4752H22.1067V16.5248H28.5739V41.9104H44.0277L44.0267 47.4752Z"
+          class="fill-primary-600 dark:fill-primary-500"></path>
+      </svg>
       <span
         class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
         >Lucas</span
@@ -59,7 +59,7 @@ const { pathname } = Astro.url;
       >
         {
           pages.map(({ name, href }) =>
-            pathname === href || (href !== "/" && pathname.includes(href)) ? (
+            pathname === href || (href !== '/' && pathname.includes(href)) ? (
               <li>
                 <a
                   href={href}
@@ -78,7 +78,7 @@ const { pathname } = Astro.url;
                   {name}
                 </a>
               </li>
-            )
+            ),
           )
         }
       </ul>

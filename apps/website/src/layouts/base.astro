@@ -1,7 +1,7 @@
 ---
-import "@/styles/global.css";
-import Footer from "@/components/footer.astro";
-import Header from "@/components/header.astro";
+import '@/styles/global.css';
+import Footer from '@/components/footer.astro';
+import Header from '@/components/header.astro';
 
 const { title, description } = Astro.props;
 ---
@@ -25,6 +25,9 @@ const { title, description } = Astro.props;
       <slot />
     </main>
     <Footer />
-    <script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <script
+      is:inline
+      src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"
+    ></script>
   </body>
 </html>

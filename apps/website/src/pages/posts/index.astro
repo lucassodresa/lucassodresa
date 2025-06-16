@@ -1,14 +1,12 @@
 ---
-import BaseLayout from "@/layouts/base.astro";
-import { imageUrlBuilder } from "@/libs/sanity";
-import { loadAllPosts } from "@/core/usecases/load-all-posts";
+import BaseLayout from '@/layouts/base.astro';
+import { imageUrlBuilder } from '@/libs/sanity';
+import { loadAllPosts } from '@/core/usecases/load-all-posts';
 
-const posts = await loadAllPosts()
-
+const posts = await loadAllPosts();
 ---
 
 <BaseLayout title="Posts" description="Posts page">
-
   <section class="bg-white dark:bg-gray-900">
     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
       <div class="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
@@ -35,8 +33,8 @@ const posts = await loadAllPosts()
               estimatedReadingTime,
             }) => {
               const date = new Date(_createdAt);
-              const dateString = new Intl.DateTimeFormat("en-US", {
-                dateStyle: "medium",
+              const dateString = new Intl.DateTimeFormat('en-US', {
+                dateStyle: 'medium',
               }).format(date);
 
               return (
@@ -50,7 +48,7 @@ const posts = await loadAllPosts()
                         class="w-full h-full object-cover mx-auto rounded-lg"
                         src={imageUrlBuilder(mainImageUrl)
                           .width(400)
-                          .format("webp")
+                          .format('webp')
                           .url()}
                         alt="office laptop working"
                       />
@@ -70,7 +68,7 @@ const posts = await loadAllPosts()
                         src={imageUrlBuilder(author.imageUrl)
                           .height(64)
                           .width(64)
-                          .format("webp")
+                          .format('webp')
                           .url()}
                         alt={`${author.name} avatar`}
                         loading="lazy"
@@ -85,7 +83,7 @@ const posts = await loadAllPosts()
                   </article>
                 </a>
               );
-            }
+            },
           )
         }
       </div>
